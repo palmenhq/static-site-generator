@@ -1,0 +1,4 @@
+# Example file that'll be copied to /dist (content root of our website)
+
+User-agent: *
+Allow: /
