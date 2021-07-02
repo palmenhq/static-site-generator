@@ -1,5 +1,9 @@
 html
     head
+        // `fileRegistry` comes from `gulp/export-hash.js`. We try to get `/index.scss`, and
+        // if that isn't present probably we're in dev mode (with no content hashing), and we can output the regular file name
+        link(rel="stylesheet", href=('/css' + (fileRegistry.get('/index.scss') || '/index.css')))
+
         title #{title}
 
     body

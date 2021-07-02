@@ -1,6 +1,8 @@
 {
   "devDependencies": {
     "gulp": "^4.0.2",
+    "gulp-hash-filename": "^3.0.0",
+    "gulp-mode": "^1.1.0",
     "gulp-sass": "^5.0.0",
     "http-serve": "^1.0.1",
     "marked": "^2.1.3",

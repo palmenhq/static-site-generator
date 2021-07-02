@@ -4,6 +4,7 @@ import pug from 'pug'
 import { Transform } from 'stream'
 import path from 'path'
 import Vinyl from 'vinyl'
+import { fileRegistry } from './export-hash.js'
 
 export const templates = ({ baseDir, templatesDir }) => {
   const stream = new Transform({ objectMode: true }) // Streams are at the heart of Gulp, helping us to transform all the files
@@ -32,7 +33,10 @@ export const templates = ({ baseDir, templatesDir }) => {
         })
         .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}) // Put together the configuration as it was before, but with the parsed markdown
 
-      result = pug.compileFile(templatePath)(markdownedConfig)
+      result = pug.compileFile(templatePath)({
+        ...markdownedConfig,
+        fileRegistry, // add the fileRegistry as a variable in the template
+      })
     } catch (e) {
       callback(e) // Oops, tell Gulp sometihng went wrong by passing the error to the callback
       return
