@@ -2,3 +2,9 @@
 template = "index.pug"
 
 title = "Hello"
+headline = "inlinemd:A beautiful headline with _italic_ content" ## We don't want markdown to automaticall add `<p>` tags here
+content = """md:
+## A sub headline
+
+__Very__ informative text
+""" # But we want `<p>` tags here

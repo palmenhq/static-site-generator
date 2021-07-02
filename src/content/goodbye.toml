@@ -2,3 +2,9 @@
 template = "index.pug"
 
 title = "Goodbye"
+headline = "inlinemd:A beautiful headline with _italic_ content"
+content = """md:
+## A sub headline
+
+__Very__ informative text
+"""
