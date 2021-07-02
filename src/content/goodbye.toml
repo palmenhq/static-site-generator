@@ -1,0 +1,4 @@
+# This file should compile into `dist/index.html`
+template = "index.pug"
+
+title = "Goodbye"
