@@ -1,9 +1,18 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.2.0",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-cssnano": "^2.1.3",
     "gulp-hash-filename": "^3.0.0",
+    "gulp-livereload": "^4.0.2",
     "gulp-mode": "^1.1.0",
     "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-webpack": "^1.5.0",
     "http-serve": "^1.0.1",
     "marked": "^2.1.3",
     "node-sass": "^6.0.1",
@@ -14,7 +23,8 @@
     "vinyl": "^2.2.1"
   },
   "scripts": {
-    "build": "gulp",
+    "build": "NODE_ENV=production gulp",
+    "start": "NODE_ENV=development concurrently -n hs,gulp 'yarn hs dist' 'yarn gulp watch'",
     "serve": "hs dist"
   },
   "type": "module"

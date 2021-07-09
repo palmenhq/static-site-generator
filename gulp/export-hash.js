@@ -12,7 +12,7 @@ export const exportHash = () => {
       ''
     ) // Remove the base path (ie `src/sass`), I think the content hashed files should be few enough to not have colliding file names
 
-    fileRegistry.set(originalName, newName) // Store away the file name as an entry `index.css -> index-7025eefd346ef6f3abad8d51e5d43ffa.css`
+    fileRegistry.set(originalName, newName) // Store away the file name as an entry `/index.css -> /index-7025eefd346ef6f3abad8d51e5d43ffa.css`
 
     this.push(chunk) // Just continue, letting gulp know we finished
     callback()

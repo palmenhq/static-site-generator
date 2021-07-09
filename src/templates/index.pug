@@ -12,3 +12,5 @@ html
 
         .
             !{content}
+
+        script(src='/js' + (fileRegistry.get('/bundle.js') || '/bundle.js'))
